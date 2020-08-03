@@ -1,0 +1,28 @@
+.lnb {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  margin: 0 20px 0 0;
+  background: #333;
+
+  ul {
+    li {
+      height: 60px;
+      padding: 0 10px 0;
+      line-height: 40px;
+      background-color: #999;
+      text-transform: uppercase;
+      
+      &:nth-child(even) {
+        background-color: #eaeaea;
+      }
+
+      &.selected {
+        outline: 2px solid gold;
+        outline-offset: -2px;
+      }
+    }
+  }
+}

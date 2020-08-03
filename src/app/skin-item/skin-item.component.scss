@@ -1,0 +1,58 @@
+li {
+  position: relative;
+  width: 220px;
+  margin: 0 20px 20px 0;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000;
+  }
+
+  &.gold:after { background-color: gold; }
+  &.red:after { background-color: red; }
+  &.blue:after { background-color: blue; }
+  &.green:after { background-color: green; }
+  &.cyan:after { background-color: cyan; }
+  &.pink:after { background-color: pink; }
+  &.bronze:after { background-color: burlywood; }
+  &.basic:after { background-color:silver; }
+
+  dl {
+    padding: 0 0 20px 0;
+
+    dt {
+      height: 220px;
+      margin: 0 0 10px 0;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+    }
+    dd {
+      padding: 0 20px 0;
+
+      &.product-name {
+
+        span {
+          display: block;
+          font-size: 12px;
+        }
+
+        strong {
+          display: block;
+          font-size: 16px;
+        }
+
+      }
+    }
+  }  
+}

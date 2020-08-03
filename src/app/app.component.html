@@ -1,0 +1,24 @@
+<main>
+  <skin-lnb
+    [itemFilter] = "itemFilter"
+    (onClickItem) = "handleClickItem($event)">
+  </skin-lnb>  
+  
+  <section class="list-wrap">    
+    <ul class="list">
+      <skin-item
+        *ngFor="let item of items"
+        [item]="item"
+        [itemFilter]="itemFilter"
+        (isModalShow)="modalShow($event)">        
+      </skin-item>      
+    </ul>
+  </section>
+</main>
+
+<skin-modal 
+  [isModalShow]="isModalShow"  
+  [selectedItem]="selectedItem"
+  [detailImg]="detailImg"
+  (onClickModalHide)="handleModalHide()">
+</skin-modal>

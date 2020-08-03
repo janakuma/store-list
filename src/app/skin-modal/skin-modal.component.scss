@@ -1,0 +1,124 @@
+.modal-detailView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+
+  .btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .content {            
+    position: relative;
+    width: 800px;
+    padding: 40px 0;    
+    background: #fff;    
+  }
+
+  .content {
+    figure {
+      display: block;
+      width: 400px;
+      margin: 0 auto;
+      img {width: 100%;}
+    }
+
+    .slide-view {
+      overflow: hidden;
+      width: 400px;
+      height: 400px;      
+      margin: 0 auto;
+
+      ul {
+        display: flex;
+        transition: margin 0.4s;
+        
+        li {
+          flex: 0 0 400px;
+          width: 400px;
+          height: 400px;
+
+          img {width: 100%; height: 100%;}
+        }
+      }
+    }
+
+    button[class^="btn-"] {
+      $gap: 60px;
+
+      position: absolute;
+      top: 200px;
+      overflow: hidden;
+      text-indent: -1000px;
+      width: 80px;
+      height: 80px;
+      transform: rotate(45deg);
+      opacity: 0.5;
+      background: transparent;
+      border: solid #333;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      
+
+      &.btn-slideLeft {
+        left: $gap;
+        border-width: 0 0 5px 5px;
+      }
+      &.btn-slideRight {
+        right: $gap;
+        border-width: 5px 5px 0 0;
+      }
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .detail-list {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+      li {
+        width: 100px;
+        height: 100px;
+        transition: all 0.1s;
+        background-color: #eaeaea;                
+
+        img {
+          width: 100%;
+          height: 100%;
+          vertical-align: top;
+        }
+      }
+
+      li.selected,
+      li:hover {
+        outline: 3px solid black;;
+        outline-offset: -3px;        
+        
+      }
+
+      li ~ li {
+        margin-left: 7px;
+      }
+    }
+  }
+}

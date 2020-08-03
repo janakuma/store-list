@@ -1,0 +1,40 @@
+<div 
+  class="modal-detailView" 
+  *ngIf="isModalShow" 
+  (window:keyup.esc)="handleModalHide()"
+>
+  <div class="content">
+    <!-- <figure>
+      <img [src]="detailImg" alt="">      
+    </figure>   -->
+
+    <div class="slide-view">
+      <ul [ngStyle]="{'margin-left.%': -100 * thumIndex}">
+        <li 
+          *ngFor="let thum of selectedItem.thum;"          
+        >
+          <img [src]="thum" alt="">
+        </li>      
+      </ul>      
+    </div>
+
+    <button class="btn-slideLeft" (click)="onSlide('left')">LEFT</button>
+    <button class="btn-slideRight" (click)="onSlide('right')">RIGHT</button>
+
+    <h3>
+      {{selectedItem.title}}
+    </h3>
+
+    <ul class="detail-list">
+      <li 
+        *ngFor="let thum of selectedItem.thum; let i = index"
+        (click)="showViewThum(thum, i)"
+        [class.selected]="i === thumIndex"
+      >
+        <img [src]="thum" alt="">
+      </li>      
+    </ul>
+
+  </div>  
+  <button class="btn-close" (click)="handleModalHide()">close</button>
+</div>

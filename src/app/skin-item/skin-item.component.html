@@ -1,0 +1,19 @@
+<li 
+  class="{{repaceTierName(item.tier)}}"
+  *ngIf="viewSkinItem(itemFilter, item)"
+>
+  <dl>
+    <dt
+      (click)="modalShow(item)"
+    >
+      <img [src]="item.thum[0]" alt="">      
+    </dt>    
+    <dd class="product-name">
+      <span>{{item.kinds}}</span>
+      <strong>{{item.title}}</strong>      
+    </dd>
+    <dd class="product-price">
+      <strong>{{item.price}}</strong>원
+    </dd>    
+  </dl>
+</li>
